@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap');
+        
+        :root {
+            --neon-blue: #00f0ff;
+            --neon-purple: #a855f7;
+            --neon-cyan: #22d3ee;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px var(--neon-blue),
+                        0 0 20px var(--neon-blue);
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 15px var(--neon-purple),
+                        0 0 30px var(--neon-purple);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 25px var(--neon-cyan);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+        
+        .section-header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        /* ===== Декор карточек ===== */
+        .card-photo-wrap {
+            position: relative;
+            height: 12rem;
+            overflow: hidden;
+        }
+        .card-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-photo-wrap img.broken {
+            display: none;
+        }
+        .group:hover .card-photo-wrap img {
+            transform: scale(1.08);
+        }
+        .card-photo-fallback {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            opacity: 0.25;
+        }
+        .card-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .group:hover .card-ring {
+            opacity: 1;
+        }
+    </style> 
+</head>
+<body class="bg-zinc-950 text-zinc-100 overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold neon-glow">₿</div>
+                <span class="text-1xl font-semibold tracking-tight">novikov crypto  </span>
+            </a>
+            
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="nav-link px-4 py-2 hover:text-cyan-400">Обо мне</a>
+                <a href="contact.html" class="nav-link px-4 py-2 hover:text-cyan-400">Контакты</a>
+            </nav>
+            
+            
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen pt-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left -->
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-700 rounded-3xl text-sm">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    Актуально в 2026
+                </div>
+                
+                <h1 class="text-1xl md:text-5xl font-bold leading-none tracking-tighter neon-text">
+                    Ты узнаешь про<br>стратегии, термины<br>и основы крипто<br>трейдинга
+                </h1>
+                
+                <p class="text-xl text-zinc-400 max-w-lg">
+                    Этот сайт создан для новичков и тех, кто хочет понять криптовалютный рынок, торговые стратегии и популярный трейдерский сленг.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="learn.html" 
+                       class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl font-semibold text-lg hover:scale-105 transition-transform flex items-center gap-3">
+                        Начать обучение
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="strategies.html" 
+                       class="px-8 py-4 border border-zinc-700 hover:border-cyan-400 rounded-3xl font-medium text-lg transition-all">
+                        Посмотреть стратегии
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm pt-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-users text-cyan-400"></i>
+                        <div>200+ трейдеров </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-book text-purple-400"></i>
+                        <div>30+ уроков</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Image -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-purple-600/10 rounded-[3rem] -rotate-3 neon-glow"></div>
+                <img src="Jujn7.jpg"
+                     alt="Крипто трейдинг дашборд" 
+                     class="relative rounded-3xl shadow-2xl neon-glow w-full object-cover h-[620px] border border-zinc-700">
+           
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS SECTION -->
+    <section class="py-24 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-semibold tracking-tight mb-4">Что ты найдёшь на сайте</h2>
+                <p class="text-zinc-400 max-w-md mx-auto">Практические знания, которые помогут тебе уверенно торговать на крипторынке</p>
+            </div>
+
+            <!-- ===== РЯД 1: СТРАТЕГИИ · ТЕРМИНЫ · ОБУЧЕНИЕ ===== -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <a href="strategies.html" class="group block">
+                    <div class="card-hover relative bg-zinc-900 border border-zinc-800 rounded-3xl h-full flex flex-col overflow-hidden">
+                        <div class="card-ring" style="box-shadow: inset 0 0 0 1px rgba(251,146,60,0.5), 0 0 30px rgba(251,146,60,0.15);"></div>
+                        <div class="card-photo-wrap bg-gradient-to-br from-amber-500/20 to-orange-600/20">
+                            <div class="card-photo-fallback"></div> 
+                            <img src="4c3ef8d963d687b178c0ec3b65a0bbe4.jpg" alt="Стратегии" onerror="this.classList.add('broken')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-10 flex flex-col flex-1">
+                            <h3 class="text-3xl font-semibold mb-3">Стратегии</h3>
+                            <p class="text-zinc-400 flex-1">Рабочие крипто-стратегии для торговли. От скальпинга до долгосрочного холда.</p>
+                            <div class="mt-8 text-cyan-400 group-hover:text-cyan-300 flex items-center gap-2 text-sm font-medium">
+                                Перейти к стратегиям 
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Card 2 -->
+                <a href="terms.html" class="group block">
+                    <div class="card-hover relative bg-zinc-900 border border-zinc-800 rounded-3xl h-full flex flex-col overflow-hidden">
+                        <div class="card-ring" style="box-shadow: inset 0 0 0 1px rgba(244,114,182,0.5), 0 0 30px rgba(244,114,182,0.15);"></div>
+                        <div class="card-photo-wrap bg-gradient-to-br from-purple-500/20 to-pink-600/20">
+                            <div class="card-photo-fallback"></div>
+                            <img src="430afc60d43f160d70b1db896ac61250.jpg" alt="Термины" onerror="this.classList.add('broken')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-10 flex flex-col flex-1">
+                            <h3 class="text-3xl font-semibold mb-3">Термины</h3>
+                            <p class="text-zinc-400 flex-1">Популярный крипто-сленг и подробные объяснения. Разберём FOMO, HODL, whale и многое другое.</p>
+                            <div class="mt-8 text-cyan-400 group-hover:text-cyan-300 flex items-center gap-2 text-sm font-medium">
+                                Изучить термины 
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Card 3 -->
+                <a href="learn.html" class="group block">
+                    <div class="card-hover relative bg-zinc-900 border border-zinc-800 rounded-3xl h-full flex flex-col overflow-hidden">
+                        <div class="card-ring" style="box-shadow: inset 0 0 0 1px rgba(34,211,238,0.5), 0 0 30px rgba(34,211,238,0.15);"></div>
+                        <div class="card-photo-wrap bg-gradient-to-br from-cyan-500/20 to-teal-600/20">
+                            <div class="card-photo-fallback">🎓</div>
+                            <img src="10e8cdfbe9a956d07521498dbd4951a3.jpg" alt="Обучение" onerror="this.classList.add('broken')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-10 flex flex-col flex-1">
+                            <h3 class="text-3xl font-semibold mb-3">Обучение</h3>
+                            <p class="text-zinc-400 flex-1">База знаний для новичков. От блокчейна до первых сделок на бирже.</p>
+                            <div class="mt-8 text-cyan-400 group-hover:text-cyan-300 flex items-center gap-2 text-sm font-medium">
+                                Начать обучение 
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- ===== РЯД 2: АНАЛИТИКА · ПСИХОЛОГИЯ · КАЛЬКУЛЯТОРЫ ===== -->
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+                <!-- Card 4: Аналитика -->
+                <a href="analytics.html" class="group block">
+                    <div class="card-hover relative bg-zinc-900 border border-zinc-800 rounded-3xl h-full flex flex-col overflow-hidden">
+                        <div class="card-ring" style="box-shadow: inset 0 0 0 1px rgba(96,165,250,0.5), 0 0 30px rgba(96,165,250,0.15);"></div>
+                        <div class="card-photo-wrap bg-gradient-to-br from-blue-500/20 to-indigo-600/20">
+                            <div class="card-photo-fallback">📊</div>
+                            <img src="edc137556d10796d72d7064efd22acd8.jpg" alt="Аналитика" onerror="this.classList.add('broken')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-10 flex flex-col flex-1">
+                            <h3 class="text-3xl font-semibold mb-3">Аналитика</h3>
+                            <p class="text-zinc-400 flex-1">Обзор рынка, индикаторы, уровни поддержки и сопротивления. Анализируй графики как профессионал.</p>
+                            <div class="mt-8 text-cyan-400 group-hover:text-cyan-300 flex items-center gap-2 text-sm font-medium">
+                                Изучить аналитику 
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 5: Психология -->
+                <a href="psychology.html" class="group block">
+                    <div class="card-hover relative bg-zinc-900 border border-zinc-800 rounded-3xl h-full flex flex-col overflow-hidden">
+                        <div class="card-ring" style="box-shadow: inset 0 0 0 1px rgba(251,113,133,0.5), 0 0 30px rgba(251,113,133,0.15);"></div>
+                        <div class="card-photo-wrap bg-gradient-to-br from-rose-500/20 to-pink-600/20">
+                            <div class="card-photo-fallback">🧠</div>
+                            <img src="a8942b0cf459e4f47040bbd9e620c7fc.jpg" alt="Психология" onerror="this.classList.add('broken')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-10 flex flex-col flex-1">
+                            <h3 class="text-3xl font-semibold mb-3">Психология</h3>
+                            <p class="text-zinc-400 flex-1">Контроль эмоций, дисциплина, управление рисками. Как победить FOMO и не сливать депозит.</p>
+                            <div class="mt-8 text-cyan-400 group-hover:text-cyan-300 flex items-center gap-2 text-sm font-medium">
+                                Изучить психологию 
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 6: Калькуляторы -->
+                <a href="calculator.html" class="group block">
+                    <div class="card-hover relative bg-zinc-900 border border-zinc-800 rounded-3xl h-full flex flex-col overflow-hidden">
+                        <div class="card-ring" style="box-shadow: inset 0 0 0 1px rgba(52,211,153,0.5), 0 0 30px rgba(52,211,153,0.15);"></div>
+                        <div class="card-photo-wrap bg-gradient-to-br from-emerald-500/20 to-cyan-600/20">
+                            <div class="card-photo-fallback">🧮</div>
+                            <img src="65f7e9984cfd3ce3c5e539be8ac6b9f8.jpg" alt="Калькуляторы" onerror="this.classList.add('broken')">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent"></div>
+                        </div>
+                        <div class="p-8 pt-10 flex flex-col flex-1">
+                            <h3 class="text-3xl font-semibold mb-3">Калькуляторы</h3>
+                            <p class="text-zinc-400 flex-1">Рассчитай объём позиции, риск на сделку, потенциальную прибыль и размер стоп-лосса.</p>
+                            <div class="mt-8 text-cyan-400 group-hover:text-cyan-300 flex items-center gap-2 text-sm font-medium">
+                                Открыть калькуляторы 
+                                <i class="fas fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-zinc-900 py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center mb-8">
+                <div class="flex items-center gap-2 text-2xl font-bold">
+                    <span class="text-cyan-400"></span>
+                </div>
+            </div>
+            <p class="text-zinc-500">© novikov crypto</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already included
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+
+        .contact-block {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.2s ease;
+        }
+        .contact-block:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+        }
+
+        .contact-handle {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #22d3ee;
+            font-family: 'Inter', monospace;
+            letter-spacing: -0.02em;
+        }
+        .contact-sub {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .tg-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.8rem;
+            background: rgba(34, 211, 238, 0.08);
+            border: 1px solid rgba(34, 211, 238, 0.15);
+            border-radius: 999px;
+            color: #22d3ee;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .tg-btn:hover {
+            background: #22d3ee;
+            color: #09090b;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-row span:first-child { color: #6b7280; }
+        .info-row span:last-child { color: #e5e7eb; }
+
+        .tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.04em;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.08);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+        }
+
+        .offer-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            transition: border-color 0.2s ease;
+        }
+        .offer-card:hover {
+            border-color: rgba(34, 211, 238, 0.15);
+        }
+        .offer-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .offer-title i { color: #22d3ee; }
+        .offer-desc {
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-top: 0.2rem;
+        }
+		
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">Крипто Стратегии</span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="hover:text-cyan-400 transition">Обо мне</a>
+                <a href="contact.html" class="text-cyan-400">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="pt-24 max-w-2xl mx-auto px-6 py-16">
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-3 text-center">Контакты</h1>
+        <p class="text-zinc-400 text-center text-lg mb-12">Связь · сотрудничество · вопросы</p>
+
+       <!-- ===== ОСНОВНОЙ КОНТАКТ ===== -->
+<div class="mt-16 pt-10 border-t border-zinc-800/50">
+    <div class="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 md:p-10 text-center">
+        
+        <div class="contact-handle text-4xl font-bold text-white mb-3">@qmrkm</div>
+        
+        <div class="contact-sub text-zinc-400 mb-8 text-lg">
+            Telegram · ответ в течение 12 часов<br>
+            доступен 24/7
+        </div>
+        
+        <a href="https://t.me/qmrkm" target="_blank" 
+           class="group inline-flex items-center gap-3 px-10 py-5 text-xl font-semibold
+                  bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400
+                  rounded-2xl text-zinc-400 hover:text-white transition-all duration-300
+                  neon-glow-hover w-full max-w-md mx-auto">
+            <i class="fab fa-telegram text-2xl text-cyan-400 group-hover:scale-110 transition-transform"></i>
+            Написать в Telegram
+        </a>
+    </div>
+</div>
+        
+         
+
+<!-- ===== КНОПКА НАЗАД ===== -->
+<div class="mt-16 pt-10 border-t border-zinc-800/50 text-center">
+    <a href="index.html" 
+       class="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium 
+              bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400 
+              rounded-2xl text-zinc-400 hover:text-white transition-all duration-300 
+              neon-glow-hover">
+        <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform"></i>
+        Вернуться на главную
+    </a>
+</div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-black py-8 text-center text-zinc-500 border-t border-zinc-900 text-sm">
+        <p>© 2026  novikov crypto  </p>
+    </footer>
+
+</body>
+</html>

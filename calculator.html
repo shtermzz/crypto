@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькуляторы - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+
+        .calc-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .calc-card:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+            background: rgba(34, 211, 238, 0.03);
+            transform: translateY(-3px);
+        }
+
+        .calc-card input,
+        .calc-card select {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+            color: #e5e7eb;
+            font-size: 0.9rem;
+            transition: border-color 0.2s ease;
+            outline: none;
+        }
+        .calc-card input:focus,
+        .calc-card select:focus {
+            border-color: #22d3ee;
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+        }
+        .calc-card input::placeholder {
+            color: #6b7280;
+        }
+        .calc-card label {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .result-box {
+            background: rgba(34, 211, 238, 0.05);
+            border: 1px solid rgba(34, 211, 238, 0.15);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .result-box .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #22d3ee;
+            font-family: 'Inter', monospace;
+        }
+        .result-box .label {
+            color: #6b7280;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.08);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+        }
+        .tag-rose {
+            background: rgba(244, 63, 94, 0.08);
+            color: #f43f5e;
+            border-color: rgba(244, 63, 94, 0.12);
+        }
+        .tag-emerald {
+            background: rgba(52, 211, 153, 0.08);
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.12);
+        }
+        .tag-amber {
+            background: rgba(251, 191, 36, 0.08);
+            color: #fbbf24;
+            border-color: rgba(251, 191, 36, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">novikov crypto</span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="hover:text-cyan-400 transition">Обо мне</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="pt-24 max-w-5xl mx-auto px-6 py-16">
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Калькуляторы</h1>
+        <p class="text-zinc-400 text-lg mb-12 border-l-2 border-cyan-400 pl-4">
+            Рассчитай риск, объём позиции и потенциальную прибыль
+        </p>
+
+        <!-- ============================================================ -->
+        <!-- ===== 3 КАЛЬКУЛЯТОРА В РЯД ===== -->
+        <!-- ============================================================ -->
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- ========================================================== -->
+            <!-- 1. КАЛЬКУЛЯТОР РИСКА -->
+            <!-- ========================================================== -->
+            <div class="calc-card">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl">⚖️</span>
+                    <h3 class="text-lg font-semibold">Калькулятор риска</h3>
+                    <span class="tag-rose">риск</span>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <label for="risk-balance">Баланс ($)</label>
+                        <input type="number" id="risk-balance" placeholder="10000" value="10000" />
+                    </div>
+                    <div>
+                        <label for="risk-percent">Риск на сделку (%)</label>
+                        <input type="number" id="risk-percent" placeholder="1" value="1" step="0.1" />
+                    </div>
+                    <div>
+                        <label for="risk-sl">Стоп-лосс (пунктов)</label>
+                        <input type="number" id="risk-sl" placeholder="100" value="100" />
+                    </div>
+
+                    <button onclick="calculateRisk()" class="w-full py-2.5 bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-zinc-950 transition-colors font-medium text-sm">
+                        Рассчитать
+                    </button>
+
+                    <div class="result-box">
+                        <div class="label">Максимальный риск в сделке</div>
+                        <div class="value" id="risk-result">$100.00</div>
+                        <div class="label mt-1" style="font-size:0.6rem;color:#6b7280;">
+                            Объём позиции: <span id="risk-volume" style="color:#e5e7eb;">0.01</span> лота
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- 2. КАЛЬКУЛЯТОР ПОЗИЦИИ -->
+            <!-- ========================================================== -->
+            <div class="calc-card">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl">📐</span>
+                    <h3 class="text-lg font-semibold">Калькулятор позиции</h3>
+                    <span class="tag">объём</span>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <label for="pos-balance">Баланс ($)</label>
+                        <input type="number" id="pos-balance" placeholder="10000" value="10000" />
+                    </div>
+                    <div>
+                        <label for="pos-risk">Риск на сделку ($)</label>
+                        <input type="number" id="pos-risk" placeholder="100" value="100" />
+                    </div>
+                    <div>
+                        <label for="pos-sl">Стоп-лосс (пунктов)</label>
+                        <input type="number" id="pos-sl" placeholder="100" value="100" />
+                    </div>
+
+                    <button onclick="calculatePosition()" class="w-full py-2.5 bg-emerald-400/10 border border-emerald-400/30 text-emerald-400 rounded-lg hover:bg-emerald-400 hover:text-zinc-950 transition-colors font-medium text-sm">
+                        Рассчитать
+                    </button>
+
+                    <div class="result-box" style="border-color:rgba(52,211,153,0.15);background:rgba(52,211,153,0.05);">
+                        <div class="label">Объём позиции</div>
+                        <div class="value" id="pos-result" style="color:#34d399;">0.10 лота</div>
+                        <div class="label mt-1" style="font-size:0.6rem;color:#6b7280;">
+                            Риск: <span id="pos-risk-result" style="color:#e5e7eb;">$100.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================== -->
+            <!-- 3. КАЛЬКУЛЯТОР ПРИБЫЛИ -->
+            <!-- ========================================================== -->
+            <div class="calc-card">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl">💰</span>
+                    <h3 class="text-lg font-semibold">Калькулятор прибыли</h3>
+                    <span class="tag-amber">RR</span>
+                </div>
+
+                <div class="space-y-3">
+                    <div>
+                        <label for="profit-entry">Цена входа ($)</label>
+                        <input type="number" id="profit-entry" placeholder="60000" value="60000" step="0.01" />
+                    </div>
+                    <div>
+                        <label for="profit-target">Цена цели ($)</label>
+                        <input type="number" id="profit-target" placeholder="63000" value="63000" step="0.01" />
+                    </div>
+                    <div>
+                        <label for="profit-volume">Объём позиции (лот)</label>
+                        <input type="number" id="profit-volume" placeholder="0.1" value="0.1" step="0.01" />
+                    </div>
+
+                    <button onclick="calculateProfit()" class="w-full py-2.5 bg-amber-400/10 border border-amber-400/30 text-amber-400 rounded-lg hover:bg-amber-400 hover:text-zinc-950 transition-colors font-medium text-sm">
+                        Рассчитать
+                    </button>
+
+                    <div class="result-box" style="border-color:rgba(251,191,36,0.15);background:rgba(251,191,36,0.05);">
+                        <div class="label">Потенциальная прибыль</div>
+                        <div class="value" id="profit-result" style="color:#fbbf24;">$300.00</div>
+                        <div class="label mt-1" style="font-size:0.6rem;color:#6b7280;">
+                            RR: <span id="profit-rr" style="color:#e5e7eb;">1:3.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== ТАБЛИЦА RR ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-16 pt-10 border-t border-zinc-800/50">
+            <h3 class="text-xl font-semibold mb-4">Соотношение риска и прибыли (RR)</h3>
+            <p class="text-zinc-400 text-sm mb-6">Сколько прибыльных сделок нужно для безубыточности при разных RR</p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b border-zinc-800">
+                            <th class="text-left py-3 px-4 text-zinc-500 font-medium">RR</th>
+                            <th class="text-left py-3 px-4 text-zinc-500 font-medium">Прибыльных для безубытка</th>
+                            <th class="text-left py-3 px-4 text-zinc-500 font-medium">Винрейт для безубытка</th>
+                            <th class="text-left py-3 px-4 text-zinc-500 font-medium">Оценка</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-800/50">
+                        <tr class="hover:bg-zinc-900/30 transition">
+                            <td class="py-3 px-4 text-rose-400 font-medium">1:1</td>
+                            <td class="py-3 px-4 text-zinc-300">1 из 2</td>
+                            <td class="py-3 px-4 text-zinc-400">50%</td>
+                            <td class="py-3 px-4 text-zinc-500 text-xs">⚠️ Много ошибок не прощает</td>
+                        </tr>
+                        <tr class="hover:bg-zinc-900/30 transition">
+                            <td class="py-3 px-4 text-amber-400 font-medium">1:2</td>
+                            <td class="py-3 px-4 text-zinc-300">1 из 3</td>
+                            <td class="py-3 px-4 text-zinc-400">33.3%</td>
+                            <td class="py-3 px-4 text-zinc-500 text-xs">🔸 Минимальный рекомендованный</td>
+                        </tr>
+                        <tr class="hover:bg-zinc-900/30 transition">
+                            <td class="py-3 px-4 text-emerald-400 font-medium">1:3</td>
+                            <td class="py-3 px-4 text-zinc-300">1 из 4</td>
+                            <td class="py-3 px-4 text-zinc-400">25%</td>
+                            <td class="py-3 px-4 text-zinc-500 text-xs">✅ Оптимальный для большинства</td>
+                        </tr>
+                        <tr class="hover:bg-zinc-900/30 transition">
+                            <td class="py-3 px-4 text-cyan-400 font-medium">1:5</td>
+                            <td class="py-3 px-4 text-zinc-300">1 из 6</td>
+                            <td class="py-3 px-4 text-zinc-400">16.7%</td>
+                            <td class="py-3 px-4 text-zinc-500 text-xs">🔹 Меньше возможностей, выше винрейт</td>
+                        </tr>
+                        <tr class="hover:bg-zinc-900/30 transition">
+                            <td class="py-3 px-4 text-purple-400 font-medium">1:10</td>
+                            <td class="py-3 px-4 text-zinc-300">1 из 11</td>
+                            <td class="py-3 px-4 text-zinc-400">9.1%</td>
+                            <td class="py-3 px-4 text-zinc-500 text-xs">🔸 Редкие сделки, высокая псих. нагрузка</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== КНОПКА НАЗАД ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-12 pt-8 border-t border-zinc-800/50 text-center">
+            <a href="index.html" 
+               class="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium 
+                      bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400 
+                      rounded-2xl text-zinc-400 hover:text-white transition-all duration-300">
+                <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform"></i>
+                Вернуться на главную
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-black py-8 text-center text-zinc-500 border-t border-zinc-900 text-sm mt-8">
+        <p>© novikov crypto</p>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ===== 1. РИСК =====
+        function calculateRisk() {
+            const balance = parseFloat(document.getElementById('risk-balance').value) || 0;
+            const riskPercent = parseFloat(document.getElementById('risk-percent').value) || 0;
+            const sl = parseFloat(document.getElementById('risk-sl').value) || 1;
+
+            const riskAmount = balance * (riskPercent / 100);
+            const volume = riskAmount / sl;
+
+            document.getElementById('risk-result').textContent = '$' + riskAmount.toFixed(2);
+            document.getElementById('risk-volume').textContent = volume.toFixed(4);
+        }
+
+        // ===== 2. ПОЗИЦИЯ =====
+        function calculatePosition() {
+            const balance = parseFloat(document.getElementById('pos-balance').value) || 0;
+            const riskAmount = parseFloat(document.getElementById('pos-risk').value) || 0;
+            const sl = parseFloat(document.getElementById('pos-sl').value) || 1;
+
+            const volume = riskAmount / sl;
+
+            document.getElementById('pos-result').textContent = volume.toFixed(4) + ' лота';
+            document.getElementById('pos-risk-result').textContent = '$' + riskAmount.toFixed(2);
+        }
+
+        // ===== 3. ПРИБЫЛЬ =====
+        function calculateProfit() {
+            const entry = parseFloat(document.getElementById('profit-entry').value) || 1;
+            const target = parseFloat(document.getElementById('profit-target').value) || 1;
+            const volume = parseFloat(document.getElementById('profit-volume').value) || 0;
+
+            const diff = Math.abs(target - entry);
+            const profit = diff * volume;
+            const rr = (diff / Math.abs(entry * 0.01)).toFixed(1);
+
+            document.getElementById('profit-result').textContent = '$' + profit.toFixed(2);
+            document.getElementById('profit-rr').textContent = '1:' + rr;
+        }
+
+        // ===== ПЕРВИННЫЙ РАСЧЕТ ПРИ ЗАГРУЗКЕ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateRisk();
+            calculatePosition();
+            calculateProfit();
+
+            // Автоматический пересчет при изменении полей
+            document.querySelectorAll('#risk-balance, #risk-percent, #risk-sl').forEach(el => {
+                el.addEventListener('input', calculateRisk);
+            });
+            document.querySelectorAll('#pos-balance, #pos-risk, #pos-sl').forEach(el => {
+                el.addEventListener('input', calculatePosition);
+            });
+            document.querySelectorAll('#profit-entry, #profit-target, #profit-volume').forEach(el => {
+                el.addEventListener('input', calculateProfit);
+            });
+        });
+    </script>
+
+</body>
+</html>

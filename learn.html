@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обучение - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .lesson-card {
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        .lesson-card:hover {
+            border-left-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.03);
+        }
+        .tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.1);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.15);
+        }
+        .tag-amber {
+            background: rgba(251, 191, 36, 0.1);
+            color: #fbbf24;
+            border-color: rgba(251, 191, 36, 0.15);
+        }
+        .tag-rose {
+            background: rgba(244, 63, 94, 0.1);
+            color: #f43f5e;
+            border-color: rgba(244, 63, 94, 0.15);
+        }
+        .tag-emerald {
+            background: rgba(52, 211, 153, 0.1);
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.15);
+        }
+        .tag-purple {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+            border-color: rgba(168, 85, 247, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">novikov crypto</span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="hover:text-cyan-400 transition">Обо мне</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="pt-24 max-w-4xl mx-auto px-6 py-16">
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">База знаний для новичков</h1>
+        <p class="text-zinc-400 text-lg mb-12 border-l-2 border-cyan-400 pl-4">
+            Всё, что нужно знать о рынке: от блокчейна до торговых ордеров.
+        </p>
+
+        <div class="space-y-12">
+
+            <!-- ============================================================ -->
+            <!-- УРОК 1 — Блокчейн -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 1</span>
+                    <span class="tag">основы</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Что такое блокчейн?</h3>
+                <p class="text-zinc-400">Блокчейн — это распределённая база данных, которая хранит информацию в виде цепочки блоков. Именно на этой технологии работают все криптовалюты.</p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 2 — Первая покупка -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 2</span>
+                    <span class="tag">практика</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Как купить первую криптовалюту</h3>
+                <p class="text-zinc-400">Регистрация на бирже, верификация, пополнение с карты и первая покупка BTC или ETH.</p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 3 — Buy / Sell -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 3</span>
+                    <span class="tag">торговля</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Базовые сделки: Buy / Sell</h3>
+                <p class="text-zinc-400">
+                    На биржевом рынке основными действиями являются <strong class="text-white">покупка (Buy)</strong> и <strong class="text-white">продажа (Sell)</strong> актива. Любая сделка направлена на открытие или закрытие позиции.
+                </p>
+                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800">
+                        <span class="text-emerald-400 font-bold">▲ Открытие длинной позиции (лонг)</span>
+                        <p class="text-zinc-400 mt-1">Вы покупаете актив, рассчитывая продать его дороже.</p>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800">
+                        <span class="text-rose-400 font-bold">▼ Закрытие длинной позиции</span>
+                        <p class="text-zinc-400 mt-1">Вы продаёте купленный ранее актив, фиксируя результат.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 4 — Stop Loss / Take Profit -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 4</span>
+                    <span class="tag">риск-менеджмент</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Стоп-лосс и Тэйк-профит</h3>
+                <p class="text-zinc-400 mb-4">Два важнейших инструмента управления рисками и фиксации прибыли.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-rose-400 font-semibold text-lg">
+                            <i class="fas fa-shield-alt"></i> Стоп-лосс
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Ограничение убытков. Приказ автоматически закрыть позицию, если цена пойдёт <span class="text-rose-300">против вас</span> до заданного уровня.
+                        </p>
+                        <p class="text-zinc-500 text-xs mt-2 italic">«Не дай убытку стать катастрофой»</p>
+                    </div>
+
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-lg">
+                            <i class="fas fa-flag-checkered"></i> Тэйк-профит
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Фиксация прибыли. Приказ автоматически закрыть позицию, когда цена пойдёт <span class="text-emerald-300">в вашу пользу</span> до целевого уровня.
+                        </p>
+                        <p class="text-zinc-500 text-xs mt-2 italic">«Забирай прибыль, не жадничай»</p>
+                    </div>
+                </div>
+
+                <div class="mt-5 bg-zinc-900/40 rounded-xl p-4 border border-zinc-800 text-center text-sm text-zinc-500">
+                    <i class="fas fa-chart-line text-cyan-400 mr-2"></i>
+                    Цена растёт → <span class="text-emerald-400">Take Profit</span> &nbsp;|&nbsp; Цена падает → <span class="text-rose-400">Stop Loss</span>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 5 — Лимитные ордера -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 5</span>
+                    <span class="tag">ордера</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Отложенные лимитные ордера</h3>
+                <p class="text-zinc-400 mb-4">Ордера, которые исполняются только при достижении заданной цены.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-emerald-400 font-semibold text-lg">
+                            <i class="fas fa-arrow-down"></i> Buy Limit
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Отложенная покупка <span class="text-emerald-300">ниже</span> текущей рыночной цены (Ask). Исполняется при понижении до указанного уровня.
+                        </p>
+                        <p class="text-zinc-500 text-xs mt-2">⬇️ Цена падает → ордер срабатывает</p>
+                    </div>
+
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-rose-400 font-semibold text-lg">
+                            <i class="fas fa-arrow-up"></i> Sell Limit
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Отложенная продажа <span class="text-rose-300">выше</span> текущей рыночной цены (Bid). Исполняется при повышении до указанного уровня.
+                        </p>
+                        <p class="text-zinc-500 text-xs mt-2">⬆️ Цена растёт → ордер срабатывает</p>
+                    </div>
+                </div>
+
+                <div class="mt-4 bg-zinc-900/30 rounded-xl p-4 border border-zinc-800 text-xs text-zinc-500 leading-relaxed">
+                    <i class="fas fa-info-circle text-cyan-400 mr-2"></i>
+                    <strong class="text-zinc-300">Важно:</strong> Buy Limit устанавливается <span class="text-emerald-300">ниже</span> текущей Ask, а Sell Limit — <span class="text-rose-300">выше</span> текущей Bid.
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 6 — Рыночные ордера (Market) -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 6</span>
+                    <span class="tag">ордера</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Рыночные ордера (Market)</h3>
+                <p class="text-zinc-400 mb-4">
+                    Ордер, который исполняется <strong class="text-white">немедленно</strong> по лучшей доступной цене на рынке.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800">
+                        <span class="text-emerald-400 font-bold">Market Buy</span>
+                        <p class="text-zinc-400 text-sm mt-1">Покупка по текущей цене Ask. Исполняется мгновенно.</p>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800">
+                        <span class="text-rose-400 font-bold">Market Sell</span>
+                        <p class="text-zinc-400 text-sm mt-1">Продажа по текущей цене Bid. Исполняется мгновенно.</p>
+                    </div>
+                </div>
+                <p class="text-zinc-500 text-xs mt-3 italic">
+                    <i class="fas fa-bolt text-yellow-500 mr-1"></i> Используется, когда важна скорость, а не цена.
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 7 — Стоп-ордера (Stop Market) -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 7</span>
+                    <span class="tag">ордера</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Стоп-ордера (Stop Market)</h3>
+                <p class="text-zinc-400 mb-4">
+                    Ордер, который становится рыночным при достижении определённого уровня. Используется для входа в позицию или выхода из неё.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800">
+                        <span class="text-emerald-400 font-bold">Buy Stop</span>
+                        <p class="text-zinc-400 text-sm mt-1">Покупка <span class="text-emerald-300">выше</span> текущей цены. Срабатывает при пробое уровня.</p>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800">
+                        <span class="text-rose-400 font-bold">Sell Stop</span>
+                        <p class="text-zinc-400 text-sm mt-1">Продажа <span class="text-rose-300">ниже</span> текущей цены. Срабатывает при пробое уровня вниз.</p>
+                    </div>
+                </div>
+                <p class="text-zinc-500 text-xs mt-3 italic">
+                    <i class="fas fa-bullseye text-cyan-400 mr-1"></i> Используется для входа в тренд или защиты от убытков.
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 8 — Короткая позиция (Short) -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 8</span>
+                    <span class="tag">торговля</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Короткая позиция (Short)</h3>
+                <p class="text-zinc-400">
+                    Продажа актива, которым вы не владеете, с целью выкупить его позже по более низкой цене. Заработок на <span class="text-rose-300">падении</span> рынка.
+                </p>
+                <div class="mt-4 bg-zinc-900/40 rounded-xl p-4 border border-zinc-800 text-sm text-zinc-400">
+                    <span class="text-rose-400 font-bold">▼ Пример:</span> Вы продаёте BTC по $60 000, а покупаете обратно по $55 000 — ваша прибыль $5 000.
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 9 — Спред и комиссии -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 9</span>
+                    <span class="tag">торговля</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Спред и комиссии</h3>
+                <p class="text-zinc-400 mb-4">
+                    Разница между ценой покупки (Ask) и ценой продажи (Bid) — это <strong class="text-white">спред</strong>. Это основная стоимость сделки на рынке.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <span class="text-emerald-400 font-bold">Ask</span>
+                        <p class="text-zinc-400 mt-1">$60 100</p>
+                        <p class="text-zinc-500 text-xs">цена покупки</p>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <span class="text-cyan-400 font-bold">Спред</span>
+                        <p class="text-zinc-400 mt-1">$100</p>
+                        <p class="text-zinc-500 text-xs">разница</p>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <span class="text-rose-400 font-bold">Bid</span>
+                        <p class="text-zinc-400 mt-1">$60 000</p>
+                        <p class="text-zinc-500 text-xs">цена продажи</p>
+                    </div>
+                </div>
+                <p class="text-zinc-500 text-xs mt-3 italic">
+                    <i class="fas fa-coins text-yellow-500 mr-1"></i> Также существуют комиссии биржи за каждую сделку (maker / taker).
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 10 — Плечо (Leverage) -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 10</span>
+                    <span class="tag">риск</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Кредитное плечо (Leverage)</h3>
+                <p class="text-zinc-400">
+                    Плечо позволяет торговать на сумму, превышающую ваш депозит. Например, плечо 1:10 даёт возможность открыть позицию в 10 раз больше вашего капитала.
+                </p>
+                <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="bg-emerald-400/5 border border-emerald-400/20 rounded-xl p-4">
+                        <span class="text-emerald-400 font-bold">✅ Плюсы</span>
+                        <p class="text-zinc-400 mt-1">Потенциальная прибыль увеличивается пропорционально плечу.</p>
+                    </div>
+                    <div class="bg-rose-400/5 border border-rose-400/20 rounded-xl p-4">
+                        <span class="text-rose-400 font-bold">❌ Минусы</span>
+                        <p class="text-zinc-400 mt-1">Убытки также увеличиваются. Можно потерять весь депозит.</p>
+                    </div>
+                </div>
+                <p class="text-zinc-500 text-xs mt-3 italic">
+                    <i class="fas fa-exclamation-triangle text-yellow-500 mr-1"></i>
+                    <strong class="text-zinc-300">Важно:</strong> Используй плечо с осторожностью! Оно увеличивает и прибыль, и риск.
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 11 — Торговые сессии -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 11</span>
+                    <span class="tag-amber">рынок</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Торговые сессии</h3>
+                <p class="text-zinc-400 mb-4">
+                    Рынок криптовалют работает <strong class="text-white">24/7</strong>, но есть часы наибольшей активности, когда движение цены сильнее.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <div class="text-emerald-400 font-bold text-lg">🇦🇸</div>
+                        <div class="text-zinc-300 font-medium mt-1">Азиатская</div>
+                        <div class="text-zinc-500 text-xs">00:00 – 09:00 UTC</div>
+                        <div class="text-zinc-400 text-xs mt-1">Токио, Сингапур</div>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <div class="text-cyan-400 font-bold text-lg">🇪🇺</div>
+                        <div class="text-zinc-300 font-medium mt-1">Европейская</div>
+                        <div class="text-zinc-500 text-xs">07:00 – 16:00 UTC</div>
+                        <div class="text-zinc-400 text-xs mt-1">Лондон, Франкфурт</div>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <div class="text-rose-400 font-bold text-lg">🇺🇸</div>
+                        <div class="text-zinc-300 font-medium mt-1">Американская</div>
+                        <div class="text-zinc-500 text-xs">12:00 – 21:00 UTC</div>
+                        <div class="text-zinc-400 text-xs mt-1">Нью-Йорк, Чикаго</div>
+                    </div>
+                </div>
+                <p class="text-zinc-500 text-xs mt-3 italic">
+                    <i class="fas fa-clock text-cyan-400 mr-1"></i>
+                    <strong class="text-zinc-300">Совет:</strong> Самая высокая волатильность — когда сессии <span class="text-emerald-300">перекрываются</span> (например, Европа + Америка в 12:00–16:00 UTC).
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 12 — Пункты и пипсы (изменение цены) -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 12</span>
+                    <span class="tag-rose">цена</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Пункты и пипсы (изменение цены)</h3>
+                <p class="text-zinc-400 mb-4">
+                    <strong class="text-white">Пункт (point)</strong> — минимальное изменение цены на рынке.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-cyan-400 font-semibold text-lg">
+                            <i class="fas fa-ruler"></i> Пункт (Point)
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Минимальное изменение цены. В большинстве криптовалютных пар — это <span class="text-cyan-300">1 цент</span> или <span class="text-cyan-300">0.01$</span>.
+                        </p>
+                        <p class="text-zinc-500 text-xs mt-2">Пример: BTC $60 000 → $60 001 = +1 пункт</p>
+                    </div>
+
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-amber-400 font-semibold text-lg">
+                            <i class="fas fa-bullseye"></i> Пипс (Pips)
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Используется на Форекс. Обычно это <span class="text-amber-300">0.0001</span> для большинства пар (4-й знак после запятой).
+                        </p>
+                        <p class="text-zinc-500 text-xs mt-2">Пример: EUR/USD 1.1050 → 1.1051 = +1 пипс</p>
+                    </div>
+                </div>
+                <div class="mt-4 bg-zinc-900/30 rounded-xl p-4 border border-zinc-800 text-xs text-zinc-500 leading-relaxed">
+                    <i class="fas fa-info-circle text-cyan-400 mr-2"></i>
+                    <strong class="text-zinc-300">Важно:</strong> На криптобиржах чаще используют <span class="text-cyan-300">пункты</span>, а на Форекс — <span class="text-amber-300">пипсы</span>. Но суть одна — это минимальное изменение цены.
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 13 — Лоты -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 13</span>
+                    <span class="tag-emerald">объём</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Лоты (объём позиции)</h3>
+                <p class="text-zinc-400 mb-4">
+                    <strong class="text-white">Лот</strong> — это единица измерения объёма сделки. Чем больше лот, тем больше прибыль или убыток.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <div class="text-emerald-400 font-bold text-lg">1.0</div>
+                        <div class="text-zinc-300 font-medium mt-1">Стандартный лот</div>
+                        <div class="text-zinc-500 text-xs">= 100 000 единиц</div>
+                        <div class="text-zinc-400 text-xs mt-1">Для крупных инвесторов</div>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <div class="text-cyan-400 font-bold text-lg">0.1</div>
+                        <div class="text-zinc-300 font-medium mt-1">Мини-лот</div>
+                        <div class="text-zinc-500 text-xs">= 10 000 единиц</div>
+                        <div class="text-zinc-400 text-xs mt-1">Для средних трейдеров</div>
+                    </div>
+                    <div class="bg-zinc-900/60 rounded-xl p-4 border border-zinc-800 text-center">
+                        <div class="text-rose-400 font-bold text-lg">0.01</div>
+                        <div class="text-zinc-300 font-medium mt-1">Микро-лот</div>
+                        <div class="text-zinc-500 text-xs">= 1 000 единиц</div>
+                        <div class="text-zinc-400 text-xs mt-1">Для начинающих</div>
+                    </div>
+                </div>
+                <p class="text-zinc-500 text-xs mt-3 italic">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-1"></i>
+                    <strong class="text-zinc-300">Совет:</strong> Начинай с <span class="text-rose-300">микро-лотов (0.01)</span>, чтобы минимизировать риски на старте.
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- УРОК 14 — Маржа -->
+            <!-- ============================================================ -->
+            <div class="lesson-card pl-5 py-2">
+                <div class="flex items-center gap-3 mb-1">
+                    <span class="text-cyan-400 uppercase tracking-widest text-sm">УРОК 14</span>
+                    <span class="tag-purple">риск</span>
+                </div>
+                <h3 class="text-3xl font-semibold mb-3">Что такое маржа?</h3>
+                <p class="text-zinc-400 mb-4">
+                    <strong class="text-white">Маржа</strong> — это залог, который блокируется на бирже для открытия сделки с плечом. Это ваш <span class="text-cyan-300">гарантийный депозит</span>.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-cyan-400 font-semibold text-lg">
+                            <i class="fas fa-shield"></i> Начальная маржа
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Сумма, необходимая для <span class="text-cyan-300">открытия</span> позиции. Чем больше плечо — тем меньше маржа.
+                        </p>
+                        <div class="mt-3 bg-zinc-800/50 rounded-lg p-3 text-xs">
+                            <span class="text-zinc-400">Пример:</span> Вы хотите открыть позицию на $10 000 с плечом 1:10 → <span class="text-cyan-300">маржа = $1 000</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900/60 rounded-2xl p-5 border border-zinc-800">
+                        <div class="flex items-center gap-2 text-rose-400 font-semibold text-lg">
+                            <i class="fas fa-exclamation-triangle"></i> Маржин-колл
+                        </div>
+                        <p class="text-zinc-300 text-sm mt-2">
+                            Ситуация, когда биржа <span class="text-rose-300">принудительно закрывает</span> вашу позицию, потому что баланс упал ниже уровня поддержки.
+                        </p>
+                        <div class="mt-3 bg-zinc-800/50 rounded-lg p-3 text-xs">
+                            <span class="text-zinc-400">Пример:</span> У вас $100 маржи, позиция упала на $80 → биржа закрывает сделку, чтобы не потерять свои деньги.
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 bg-zinc-900/30 rounded-xl p-4 border border-zinc-800 text-xs text-zinc-500 leading-relaxed">
+                    <i class="fas fa-info-circle text-cyan-400 mr-2"></i>
+                    <strong class="text-zinc-300">Важно:</strong> Всегда следи за уровнем маржи! Если он падает ниже 100% — биржа может <span class="text-rose-300">принудительно закрыть</span> твою позицию (ликвидация).
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- КНОПКА НАЗАД -->
+            <!-- ============================================================ -->
+            <div class="mt-16 pt-10 border-t border-zinc-800/50 text-center">
+                <a href="index.html" 
+                   class="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium 
+                          bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400 
+                          rounded-2xl text-zinc-400 hover:text-white transition-all duration-300">
+                    <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform"></i>
+                    Вернуться на главную
+                </a>
+            </div>
+
+        </div>
+        <!-- /space-y-12 -->
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Термины - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+
+        .term-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
+        .term-card:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+            background: rgba(34, 211, 238, 0.02);
+        }
+
+        .term-term {
+            font-family: 'Inter', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #22d3ee;
+            letter-spacing: -0.02em;
+        }
+        .term-desc {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            line-height: 1.5;
+        }
+
+        .category-badge {
+            font-size: 0.6rem;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.08);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+        }
+        .category-badge.basic { color: #34d399; border-color: rgba(52, 211, 153, 0.15); background: rgba(52, 211, 153, 0.08); }
+        .category-badge.finance { color: #a855f7; border-color: rgba(168, 85, 247, 0.15); background: rgba(168, 85, 247, 0.08); }
+        .category-badge.slang { color: #f43f5e; border-color: rgba(244, 63, 94, 0.15); background: rgba(244, 63, 94, 0.08); }
+        .category-badge.strategy { color: #eab308; border-color: rgba(234, 179, 8, 0.15); background: rgba(234, 179, 8, 0.08); }
+        .category-badge.market { color: #fb923c; border-color: rgba(251, 146, 60, 0.15); background: rgba(251, 146, 60, 0.08); }
+        .category-badge.analysis { color: #60a5fa; border-color: rgba(96, 165, 250, 0.15); background: rgba(96, 165, 250, 0.08); }
+        .category-badge.tech { color: #ec4899; border-color: rgba(236, 72, 153, 0.15); background: rgba(236, 72, 153, 0.08); }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e5e7eb;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title i {
+            color: #22d3ee;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">novikov crypto </span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="hover:text-cyan-400 transition">Обо мне</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="pt-24 max-w-5xl mx-auto px-6 py-16">
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-3">Крипто-термины и сленг</h1>
+        <p class="text-zinc-400 text-lg mb-12">Разберём основные понятия, которые ты встретишь на рынке</p>
+
+        <!-- ============================================================ -->
+        <!-- 1. БАЗОВЫЕ ПОНЯТИЯ -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-cube"></i> Базовые понятия</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Блокчейн</span>
+                        <span class="category-badge basic">основа</span>
+                    </div>
+                    <div class="term-desc">Непрерывная цепочка блоков с данными. В ней хранятся все транзакции, которые нельзя изменить или удалить.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Биткоин (BTC)</span>
+                        <span class="category-badge basic">основа</span>
+                    </div>
+                    <div class="term-desc">Первая в мире криптовалюта, цифровой «золотой стандарт».</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Альткоин</span>
+                        <span class="category-badge basic">основа</span>
+                    </div>
+                    <div class="term-desc">Любая криптовалюта, созданная после Биткоина (например, Ethereum).</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Токен</span>
+                        <span class="category-badge basic">основа</span>
+                    </div>
+                    <div class="term-desc">Цифровой актив, созданный на базе существующего блокчейна (часто используется для доступа к определенным сервисам).</div>
+                </div>
+                <div class="term-card md:col-span-2">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Стейблкоин</span>
+                        <span class="category-badge basic">основа</span>
+                    </div>
+                    <div class="term-desc">Криптовалюта, курс которой привязан к реальному активу, обычно к доллару США (например, USDT, USDC), для избежания резких скачков цены.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 2. ФИНАНСЫ И ТОРГОВЛЯ -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-chart-line"></i> Финансы и торговля</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Криптобиржа</span>
+                        <span class="category-badge finance">торговля</span>
+                    </div>
+                    <div class="term-desc">Платформа для покупки, продажи и обмена криптовалют (популярные примеры — Binance или Bybit).</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Криптокошелек</span>
+                        <span class="category-badge finance">торговля</span>
+                    </div>
+                    <div class="term-desc">Программа или устройство для безопасного хранения цифровых активов и управления ими.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Децентрализация</span>
+                        <span class="category-badge finance">торговля</span>
+                    </div>
+                    <div class="term-desc">Отсутствие единого центра управления (например, банка или государства), транзакции проходят напрямую между пользователями.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Волатильность</span>
+                        <span class="category-badge finance">торговля</span>
+                    </div>
+                    <div class="term-desc">Способность цены актива сильно колебаться вверх и вниз за короткие промежутки времени.</div>
+                </div>
+                <div class="term-card md:col-span-2">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Киты (Whales)</span>
+                        <span class="category-badge finance">торговля</span>
+                    </div>
+                    <div class="term-desc">Крупные игроки (инвесторы или фонды), которые владеют большими объемами криптовалюты и могут своими действиями двигать рынок.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 3. СЛЕНГ И ПСИХОЛОГИЯ -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-comment"></i> Сленг и психология</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">HODL</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Искаженное слово Hold (держать). Стратегия долгосрочного инвестирования, когда человек держит актив годами, несмотря на падение рынка.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">FOMO</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Синдром упущенной выгоды. Эмоциональное состояние, когда человек покупает актив на пике цены из-за страха упустить прибыль.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">FUD</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Страх, неуверенность и сомнение. Распространение негативных слухов, часто для того, чтобы искусственно снизить цену актива.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Альтсезон</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Период, когда большинство альткоинов резко растут в цене по отношению к Биткоину.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">REKT</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Сленговое слово от «wrecked» — разорённый. Используется, когда трейдер потерял все деньги.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">DYOR</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Do Your Own Research — «делай свои собственные исследования». Совет не доверять чужим рекомендациям.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">NGMI</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Not Gonna Make It — «не собираюсь добиться успеха». Используется в отношении тех, кто не верит в криптовалюты.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">WAGMI</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">We Are Gonna Make It — «мы добьёмся успеха». Крипто-оптимизм, вера в светлое будущее.</div>
+                </div>
+                <div class="term-card md:col-span-2">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">BAGHOLDER</span>
+                        <span class="category-badge slang">сленг</span>
+                    </div>
+                    <div class="term-desc">Человек, который держит токены, упавшие в цене, в надежде на восстановление, вместо того чтобы зафиксировать убыток.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 4. СТРАТЕГИИ -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-chess"></i> Стратегии</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">DCA</span>
+                        <span class="category-badge strategy">стратегия</span>
+                    </div>
+                    <div class="term-desc">Dollar Cost Averaging — усреднение цены. Регулярная покупка актива на фиксированную сумму независимо от цены.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Скальпинг</span>
+                        <span class="category-badge strategy">стратегия</span>
+                    </div>
+                    <div class="term-desc">Короткие сделки на сильных движениях цены. Таймфрейм 1-5 минут. Цель — 0.5–2% за сделку.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Свинг-трейдинг</span>
+                        <span class="category-badge strategy">стратегия</span>
+                    </div>
+                    <div class="term-desc">Торговля на пробое уровней или на разворотах. Позиции держат от нескольких часов до нескольких дней.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Арбитраж</span>
+                        <span class="category-badge strategy">стратегия</span>
+                    </div>
+                    <div class="term-desc">Заработок на разнице цен одного актива на разных биржах. Покупают дешевле — продают дороже.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Стейкинг</span>
+                        <span class="category-badge strategy">стратегия</span>
+                    </div>
+                    <div class="term-desc">Хранение криптовалюты для поддержки работы сети и получения пассивного дохода (награды за блоки).</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Фарминг</span>
+                        <span class="category-badge strategy">стратегия</span>
+                    </div>
+                    <div class="term-desc">Предоставление ликвидности в DeFi-протоколах для получения высокого дохода в виде токенов.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 5. РЫНОК -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-store"></i> Рынок</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Бычий рынок (Bull)</span>
+                        <span class="category-badge market">рынок</span>
+                    </div>
+                    <div class="term-desc">Период роста цен, когда рынок движется вверх. Характерен оптимизмом и уверенностью инвесторов.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Медвежий рынок (Bear)</span>
+                        <span class="category-badge market">рынок</span>
+                    </div>
+                    <div class="term-desc">Период падения цен, когда рынок движется вниз. Характерен пессимизмом и страхом инвесторов.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Ликвидность</span>
+                        <span class="category-badge market">рынок</span>
+                    </div>
+                    <div class="term-desc">Способность актива быть быстро проданным по рыночной цене. Высокая ликвидность — легко продать, низкая — трудно.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Спред</span>
+                        <span class="category-badge market">рынок</span>
+                    </div>
+                    <div class="term-desc">Разница между ценой покупки (Ask) и ценой продажи (Bid). Основная стоимость сделки на рынке.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Pump & Dump</span>
+                        <span class="category-badge market">рынок</span>
+                    </div>
+                    <div class="term-desc">Схема искусственного завышения цены (памп) с последующей распродажей (дамп) для получения прибыли.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">SHILL</span>
+                        <span class="category-badge market">рынок</span>
+                    </div>
+                    <div class="term-desc">Активное продвижение и реклама криптовалюты или проекта, часто с преувеличенными обещаниями.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 6. АНАЛИЗ -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-magnifying-glass-chart"></i> Анализ</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Технический анализ (TA)</span>
+                        <span class="category-badge analysis">анализ</span>
+                    </div>
+                    <div class="term-desc">Анализ графиков, паттернов и индикаторов для прогнозирования движения цены.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Фундаментальный анализ (FA)</span>
+                        <span class="category-badge analysis">анализ</span>
+                    </div>
+                    <div class="term-desc">Анализ проекта, команды, технологии и рыночных перспектив для оценки внутренней стоимости актива.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Уровень поддержки</span>
+                        <span class="category-badge analysis">анализ</span>
+                    </div>
+                    <div class="term-desc">Ценовой уровень, где обычно останавливается падение цены. Зона, где покупатели сильнее продавцов.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Уровень сопротивления</span>
+                        <span class="category-badge analysis">анализ</span>
+                    </div>
+                    <div class="term-desc">Ценовой уровень, где обычно останавливается рост цены. Зона, где продавцы сильнее покупателей.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Пробой (Breakout)</span>
+                        <span class="category-badge analysis">анализ</span>
+                    </div>
+                    <div class="term-desc">Ситуация, когда цена пробивает уровень поддержки или сопротивления, часто с большим объёмом.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Ретест (Retest)</span>
+                        <span class="category-badge analysis">анализ</span>
+                    </div>
+                    <div class="term-desc">Повторное тестирование пробитого уровня, чтобы подтвердить его как новую поддержку или сопротивление.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 7. ТЕХНИЧЕСКИЕ -->
+        <!-- ============================================================ -->
+        <div class="mb-10">
+            <div class="section-title"><i class="fas fa-microchip"></i> Технические</div>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Смарт-контракт</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Программа, хранящаяся на блокчейне, которая автоматически выполняется при выполнении заданных условий.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">NFT</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Невзаимозаменяемый токен — уникальный цифровой сертификат, подтверждающий право владения на цифровой или физический объект.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">DeFi</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Децентрализованные финансы — экосистема финансовых приложений, работающих на блокчейне без посредников.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">DEX</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Децентрализованная биржа — платформа для обмена криптовалютами напрямую между пользователями без посредников.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">CEX</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Централизованная биржа — платформа, управляемая компанией (например, Binance, Bybit), которая выступает посредником.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">Gas</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Комиссия за выполнение транзакций в сети Ethereum. Платится в ETH и зависит от нагрузки сети.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">KYC</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Процедура идентификации клиента на биржах. Требует предоставления документов для соблюдения законов.</div>
+                </div>
+                <div class="term-card">
+                    <div class="flex items-start justify-between">
+                        <span class="term-term">AML</span>
+                        <span class="category-badge tech">технический</span>
+                    </div>
+                    <div class="term-desc">Борьба с отмыванием денег. Система проверок и ограничений, направленная на предотвращение незаконных операций.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- КНОПКА НАЗАД -->
+        <!-- ============================================================ -->
+        <div class="mt-10 pt-8 border-t border-zinc-800 text-center">
+            <a href="index.html" class="group inline-flex items-center gap-2 px-6 py-3 border border-zinc-700 hover:border-cyan-400 rounded-xl text-zinc-400 hover:text-cyan-400 hover:bg-cyan-400/5 transition-all duration-300 text-sm font-medium">
+                <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform duration-300"></i>
+                Вернуться на главную
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-black py-8 text-center text-zinc-500 border-t border-zinc-900 text-sm">
+        <p>©  novikov crypto </p>
+    </footer>
+
+</body>
+</html>

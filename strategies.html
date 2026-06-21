@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стратегии - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+
+        .strategy-card {
+            cursor: pointer;
+            transition: border-color 0.2s ease;
+        }
+        .strategy-card:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+        }
+
+        .strategy-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+            padding-top: 0;
+        }
+        .strategy-details.open {
+            max-height: 600px;
+            opacity: 1;
+            padding-top: 1.25rem;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.08);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+        }
+        .tag-green {
+            background: rgba(52, 211, 153, 0.08);
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.12);
+        }
+        .tag-purple {
+            background: rgba(168, 85, 247, 0.08);
+            color: #a855f7;
+            border-color: rgba(168, 85, 247, 0.12);
+        }
+        .tag-rose {
+            background: rgba(244, 63, 94, 0.08);
+            color: #f43f5e;
+            border-color: rgba(244, 63, 94, 0.12);
+        }
+        .tag-yellow {
+            background: rgba(234, 179, 8, 0.08);
+            color: #eab308;
+            border-color: rgba(234, 179, 8, 0.12);
+        }
+        .tag-orange {
+            background: rgba(251, 146, 60, 0.08);
+            color: #fb923c;
+            border-color: rgba(251, 146, 60, 0.12);
+        }
+        .tag-blue {
+            background: rgba(96, 165, 250, 0.08);
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.12);
+        }
+        .tag-pink {
+            background: rgba(236, 72, 153, 0.08);
+            color: #ec4899;
+            border-color: rgba(236, 72, 153, 0.12);
+        }
+        .tag-amber {
+            background: rgba(251, 191, 36, 0.08);
+            color: #fbbf24;
+            border-color: rgba(251, 191, 36, 0.12);
+        }
+        .tag-emerald {
+            background: rgba(52, 211, 153, 0.08);
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.12);
+        }
+        .tag-teal {
+            background: rgba(20, 184, 166, 0.08);
+            color: #14b8a6;
+            border-color: rgba(20, 184, 166, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">novikov crypto</span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="hover:text-cyan-400 transition">Кто я</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="pt-24 max-w-6xl mx-auto px-6 py-16">
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-3">Торговые стратегии</h1>
+        <p class="text-xl text-zinc-400 mb-12">Нажми на карточку, чтобы развернуть подробности</p>
+
+        <!-- ===== СЕТКА ===== -->
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <!-- 1. СКАЛЬПИНГ -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag">скальпинг</span>
+                            <span class="tag-green">высокая частота</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">⚡ Моментум скальпинг</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Короткие сделки 1–5 минут на сильных движениях.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Таймфрейм:</span> 1м – 5м</div>
+                    <div><span class="text-zinc-300">Активы:</span> Высоковолатильные альткоины, мем-монеты</div>
+                    <div><span class="text-zinc-300">Суть:</span> Вход на импульсе, выход при замедлении. Цель — 0.5–2% за сделку.</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: высокая комиссия, проскальзывание, стресс</div>
+                </div>
+            </div>
+
+            <!-- 2. СВИНГ / BREAKOUT -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-purple">свинг</span>
+                            <span class="tag">пробой</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📈 Breakout Trading</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Торговля на пробое уровней поддержки/сопротивления.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Таймфрейм:</span> 1ч – 4ч – 1д</div>
+                    <div><span class="text-zinc-300">Активы:</span> Топ-криптовалюты (BTC, ETH, SOL)</div>
+                    <div><span class="text-zinc-300">Суть:</span> Пробой сильного уровня с подтверждением объёмом. Цель — следующий уровень.</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: ложный пробой (бычий/медвежий обман)</div>
+                </div>
+            </div>
+
+            <!-- 3. АРБИТРАЖ -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag">арбитраж</span>
+                            <span class="tag-green">безрисковый</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">🔄 Арбитраж (биржевой)</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Заработок на разнице цен одного актива на разных биржах.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Как работает:</span> Покупаете дешевле на бирже A → продаёте дороже на бирже B</div>
+                    <div><span class="text-zinc-300">Важно:</span> Учитывать комиссии бирж и скорость перевода средств</div>
+                    <div><span class="text-zinc-300">Подходит для:</span> Крупного капитала, автоматических ботов</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: цена может измениться за время перевода</div>
+                </div>
+            </div>
+
+            <!-- 4. АРБИТРАЖ ФЬЮЧЕРСОВ -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-rose">арбитраж</span>
+                            <span class="tag">фьючерсы</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📊 Арбитраж фьючерсов</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Заработок на разнице между ценой фьючерса и спота (базис).</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Суть:</span> Если фьючерс дороже спота → шорт фьючерса + лонг спота (и наоборот)</div>
+                    <div><span class="text-zinc-300">Прибыль:</span> Когда базис схлопывается к нулю (финансирование фьючерсов)</div>
+                    <div><span class="text-zinc-300">Тайминг:</span> От нескольких часов до нескольких дней</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: базис может расшириться, а не сузиться</div>
+                </div>
+            </div>
+
+            <!-- 5. ПОИСК СПРЕДА -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-yellow">спред</span>
+                            <span class="tag">корреляция</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📉 Поиск спреда</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Торговля на расхождении цен двух коррелирующих активов.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Идея:</span> BTC и ETH часто движутся вместе. Если спред расширяется — ждём схождения.</div>
+                    <div><span class="text-zinc-300">Действия:</span> Лонг того, что упало → шорт того, что выросло</div>
+                    <div><span class="text-zinc-300">Для кого:</span> Для терпеливых трейдеров с аналитическим складом ума</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: корреляция может нарушиться из-за новостей</div>
+                </div>
+            </div>
+
+            <!-- 6. SMART MONEY -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-orange">смарт мани</span>
+                            <span class="tag">киты</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">🐋 Smart Money</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Следование за крупными игроками (китами, институционалами).</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Что смотреть:</span> Крупные притоки на биржи, активность крупных кошельков</div>
+                    <div><span class="text-zinc-300">Инструменты:</span> Анализ объёмов, кластерный график, ликвидность</div>
+                    <div><span class="text-zinc-300">Главное правило:</span> «Куда идут деньги китов — туда идём и мы»</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: киты могут манипулировать рынком (памп/дамп)</div>
+                </div>
+            </div>
+
+            <!-- 7. НОВОСТНОЙ ТРЕЙДИНГ -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-blue">новости</span>
+                            <span class="tag">фундаментал</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📰 Новостной трейдинг</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Заработок на рыночной реакции на важные события.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Источники:</span> Twitter (X), Telegram-каналы, CoinDesk, Cointelegraph</div>
+                    <div><span class="text-zinc-300">Что даёт движение:</span> Листинги, партнёрства, обновления сети, регуляторные решения</div>
+                    <div><span class="text-zinc-300">Важно:</span> Реакция может быть за 5–15 минут до официальной новости</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: фейковые новости, манипуляции, «купи на слухах — продай на фактах»</div>
+                </div>
+            </div>
+
+            <!-- 8. ТЕХНИЧЕСКИЙ АНАЛИЗ -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag">тех анализ</span>
+                            <span class="tag">индикаторы</span>
+                            <span class="tag-green">универсальный</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📊 Технический анализ (TA)</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Анализ графиков, паттернов и индикаторов для прогнозирования движения цены.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400">
+                    <div class="space-y-2">
+                        <div>
+                            <span class="text-zinc-300 font-medium">Ключевые паттерны:</span>
+                            <p class="text-zinc-400">Голова и плечи, двойная вершина/дно, треугольники, флаги, клинья.</p>
+                        </div>
+                        <div>
+                            <span class="text-zinc-300 font-medium">Уровни:</span>
+                            <p class="text-zinc-400">Поддержка, сопротивление, уровни Фибоначчи (0.382, 0.5, 0.618).</p>
+                        </div>
+                        <div>
+                            <span class="text-zinc-300 font-medium">Основные индикаторы:</span>
+                            <p class="text-zinc-400">
+                                • <span class="text-emerald-400">RSI</span> — перекупленность / перепроданность<br>
+                                • <span class="text-yellow-400">MA/EMA</span> — скользящие средние (50, 200)<br>
+                                • <span class="text-purple-400">MACD</span> — направление тренда<br>
+                                • <span class="text-orange-400">Объём</span> — подтверждение движений
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-zinc-800">
+                            <div class="text-yellow-500"><i class="fas fa-lightbulb mr-1"></i> Совет: начни с 2–3 индикаторов (RSI + MA + объём).</div>
+                            <div class="text-yellow-500 mt-1"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: TA не даёт 100% гарантии. Всегда используй стоп-лосс.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- НОВІ СТРАТЕГІЇ -->
+            <!-- ============================================================ -->
+
+            <!-- 9. PUMP & DUMP -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-rose">памп</span>
+                            <span class="tag">дамп</span>
+                            <span class="tag-yellow">высокий риск</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📈 Pump & Dump</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Заработок на резком искусственном росте цены с последующей распродажей.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Таймфрейм:</span> Минуты – часы</div>
+                    <div><span class="text-zinc-300">Активы:</span> Низкокапитализированные альткоины, мем-монеты</div>
+                    <div><span class="text-zinc-300">Суть:</span> шортить памп токен.</div>
+                    <div><span class="text-zinc-300">Сигналы:</span> Резкий рост объёма, аномальные покупки, уведомления из памп-групп</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: монетка может расти очень долго </div>
+                </div>
+            </div>
+
+            <!-- 10. WEB3 / DEFI FARMING -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-pink">web3</span>
+                            <span class="tag-emerald">defi</span>
+                            <span class="tag">стейкинг</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">🌐 Web3 / DeFi Farming</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Заработок на фарминге токенов, стейкинге и предоставлении ликвидности.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Таймфрейм:</span> Дни – месяцы</div>
+                    <div><span class="text-zinc-300">Инструменты:</span> Uniswap, PancakeSwap, Aave, Lido, Curve</div>
+                    <div><span class="text-zinc-300">Суть:</span> Блокируешь токены в пулах ликвидности или стейкинге → получаешь доход в виде % и бонусных токенов.</div>
+                    <div><span class="text-zinc-300">Доходность:</span> 5% – 200%+ годовых (зависит от протокола и риска)</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: потеря токенов из-за взлома протокола, «имперманентная потеря»</div>
+                </div>
+            </div>
+
+            <!-- 11. DCA (УСРЕДНЕНИЕ) -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-green">dca</span>
+                            <span class="tag">усреднение</span>
+                            <span class="tag-blue">инвестиции</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📉 DCA (Усреднение)</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Регулярная покупка актива на фиксированную сумму независимо от цены.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Таймфрейм:</span> Месяцы – годы</div>
+                    <div><span class="text-zinc-300">Активы:</span> Топ-криптовалюты (BTC, ETH)</div>
+                    <div><span class="text-zinc-300">Суть:</span> Покупаешь каждый день / неделю / месяц на одну и ту же сумму. Усредняешь цену входа.</div>
+                    <div><span class="text-zinc-300">Плюсы:</span> Не нужно следить за рынком, психологически комфортно</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: при долгосрочном падении рынка портфель может быть в минусе</div>
+                </div>
+            </div>
+
+            <!-- 12. GRID TRADING (СЕТКА) -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-teal">грид</span>
+                            <span class="tag">боты</span>
+                            <span class="tag-yellow">автоматизация</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">📊 Grid Trading (Сетка)</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Автоматическая торговля в диапазоне. Бот ставит сетку ордеров на покупку и продажу.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Таймфрейм:</span> Часы – дни</div>
+                    <div><span class="text-zinc-300">Инструменты:</span> Binance Grid Bot, Bybit Grid, 3Commas</div>
+                    <div><span class="text-zinc-300">Суть:</span> Бот размещает ордера выше и ниже текущей цены. Покупает на падении, продаёт на росте.</div>
+                    <div><span class="text-zinc-300">Плюсы:</span> Пассивный доход без постоянного контроля</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: при резком выходе из диапазона — возможны убытки</div>
+                </div>
+            </div>
+
+            <!-- 13. COPY TRADING -->
+            <div class="strategy-card bg-zinc-900 border border-zinc-700 rounded-xl p-5" onclick="toggleStrategy(this)">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                            <span class="tag-purple">копирование</span>
+                            <span class="tag-green">для новичков</span>
+                        </div>
+                        <h3 class="text-xl font-semibold">🔄 Copy Trading</h3>
+                        <p class="text-zinc-400 text-sm mt-1">Копирование сделок успешных трейдеров. Идеально для новичков без опыта.</p>
+                    </div>
+                    <i class="fas fa-chevron-down text-zinc-600 text-sm transition-transform duration-300 mt-1"></i>
+                </div>
+                <div class="strategy-details border-t border-zinc-800 text-sm text-zinc-400 space-y-2">
+                    <div><span class="text-zinc-300">Платформы:</span> Bybit Copy Trading, Binance Copy, BingX</div>
+                    <div><span class="text-zinc-300">Суть:</span> Выбираешь трейдера с хорошей статистикой → его сделки автоматически повторяются на твоём счёте.</div>
+                    <div><span class="text-zinc-300">Плюсы:</span> Не нужно учиться годами, можно копировать профи трейдеров</div>
+                    <div><span class="text-zinc-300">Минусы:</span> Трейдер может слить депозит, нужно выбирать с осторожностью</div>
+                    <div class="text-yellow-500"><i class="fas fa-exclamation-triangle mr-1"></i> Риски: зависимость от стратегии трейдера — он может ошибаться</div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /grid -->
+
+        <!-- ===== КНОПКА ===== -->
+        <div class="mt-12 pt-8 border-t border-zinc-800 text-center">
+            <a href="contact.html" class="text-lg inline-flex items-center gap-3 px-8 py-5 border border-cyan-400 hover:bg-cyan-400 hover:text-zinc-950 transition-colors rounded-2xl group">
+                <i class="fab fa-telegram text-cyan-400 group-hover:text-zinc-950 transition"></i>
+                Хочешь освоить все стратегии? Напиши мне →
+            </a>
+        </div>
+  
+        <!-- ===== КНОПКА НАЗАД ===== -->
+        <div class="mt-16 pt-10 border-t border-zinc-800/50 text-center">
+            <a href="index.html" 
+               class="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium 
+                      bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400 
+                      rounded-2xl text-zinc-400 hover:text-white transition-all duration-300">
+                <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform"></i>
+                Вернуться на главную
+            </a>
+        </div>
+    </main>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        function toggleStrategy(card) {
+            document.querySelectorAll('.strategy-details.open').forEach(detail => {
+                if (detail.closest('.strategy-card') !== card) {
+                    detail.classList.remove('open');
+                    const icon = detail.closest('.strategy-card').querySelector('.fa-chevron-down');
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                }
+            });
+
+            const details = card.querySelector('.strategy-details');
+            const icon = card.querySelector('.fa-chevron-down');
+
+            if (details.classList.contains('open')) {
+                details.classList.remove('open');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                details.classList.add('open');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+
+</body>
+</html>

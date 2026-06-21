@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аналитика - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+
+        .step-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            border-color: rgba(34, 211, 238, 0.25);
+            background: rgba(34, 211, 238, 0.03);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: rgba(34, 211, 238, 0.12);
+            line-height: 1;
+            font-family: 'Inter', monospace;
+        }
+
+        .tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.08);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+        }
+        .tag-rose {
+            background: rgba(244, 63, 94, 0.08);
+            color: #f43f5e;
+            border-color: rgba(244, 63, 94, 0.12);
+        }
+        .tag-emerald {
+            background: rgba(52, 211, 153, 0.08);
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.12);
+        }
+        .tag-amber {
+            background: rgba(251, 191, 36, 0.08);
+            color: #fbbf24;
+            border-color: rgba(251, 191, 36, 0.12);
+        }
+        .tag-purple {
+            background: rgba(168, 85, 247, 0.08);
+            color: #a855f7;
+            border-color: rgba(168, 85, 247, 0.12);
+        }
+        .tag-blue {
+            background: rgba(96, 165, 250, 0.08);
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.12);
+        }
+        .tag-pink {
+            background: rgba(236, 72, 153, 0.08);
+            color: #ec4899;
+            border-color: rgba(236, 72, 153, 0.12);
+        }
+
+        .gallery-img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-img:hover {
+            transform: scale(1.02);
+            border-color: rgba(34, 211, 238, 0.4);
+            box-shadow: 0 0 25px rgba(34, 211, 238, 0.1);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .step-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+        }
+
+        .material-block {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .material-block:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+            background: rgba(34, 211, 238, 0.03);
+            transform: translateY(-2px);
+        }
+        .material-block h4 {
+            color: #e5e7eb;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .material-block p {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">novikov crypto</span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="hover:text-cyan-400 transition">Обо мне</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="pt-24 max-w-4xl mx-auto px-6 py-16">
+
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Аналитика</h1>
+        <p class="text-zinc-400 text-lg mb-12 border-l-2 border-cyan-400 pl-4">
+            Как открыть первую сделку
+        </p>
+
+        <!-- ============================================================ -->
+        <!-- ===== БАЗОВЫЙ АЛГОРИТМ (3 шага) ===== -->
+        <!-- ============================================================ -->
+        <h2 class="text-3xl font-semibold mb-8">Базовый алгоритм</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="step-card relative">
+                <div class="step-number">1</div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="tag">тренд</span>
+                    <span class="tag-purple">структура</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Определите тренд</h3>
+                <p class="text-zinc-400 text-sm">Работа начинается с анализа структуры — <span class="text-white">максимумов и минимумов</span>.</p>
+                <div class="mt-3 text-xs text-zinc-500">
+                    <i class="fas fa-arrow-up text-emerald-400 mr-1"></i> Восходящий тренд — выше предыдущие минимумы<br />
+                    <i class="fas fa-arrow-down text-rose-400 mr-1"></i> Нисходящий тренд — ниже предыдущие максимумы
+                </div>
+            </div>
+
+            <div class="step-card relative">
+                <div class="step-number">2</div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="tag">сигнал</span>
+                    <span class="tag-amber">вход</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Найдите точку входа</h3>
+                <p class="text-zinc-400 text-sm">Нужен <span class="text-white">сигнал</span>: паттерн, зона интереса, подтверждение.</p>
+                <div class="mt-3 text-xs text-zinc-500">
+                    <i class="fas fa-circle-check text-emerald-400 mr-1"></i> Дождись подтверждения<br />
+                    <i class="fas fa-circle-exclamation text-yellow-500 mr-1"></i> Не входи на эмоциях
+                </div>
+            </div>
+
+            <div class="step-card relative">
+                <div class="step-number">3</div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="tag-rose">риск</span>
+                    <span class="tag-emerald">цель</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Задайте риск и цель</h3>
+                <p class="text-zinc-400 text-sm"><span class="text-white">Stop Loss</span> и <span class="text-white">Take Profit</span> обязательны.</p>
+                <div class="mt-3 text-xs text-zinc-500">
+                    <i class="fas fa-bullseye text-cyan-400 mr-1"></i> Рабочее соотношение — <span class="text-emerald-400">от 1:3</span><br />
+                    <span class="text-zinc-400">Риск 1 → прибыль 3</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== СТРУКТУРА ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-16 pt-10 border-t border-zinc-800/50">
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Определение структуры</h3>
+                    <div class="space-y-4 text-sm text-zinc-400">
+                        <div><p class="text-zinc-300 font-medium">Что это?</p><p>Определение общего направления рынка.</p></div>
+                        <div><p class="text-zinc-300 font-medium">Как это работает?</p><p>Сначала определите структуру и зоны ликвидности. Уточните, где находится цена и куда она скорее всего пойдет.</p></div>
+                        <div><p class="text-zinc-300 font-medium">Применение</p><p>Найдите зоны интереса (POI). В зонах POI ищите подтверждение для входа.</p></div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p class="text-zinc-300 font-medium">Ключевой элемент: Swing Highs / Swing Lows</p>
+                            <ul class="list-disc list-inside space-y-1 mt-1 text-xs text-zinc-500">
+                                <li><span class="text-emerald-400">Swing High:</span> Три свечи, где центральная имеет наивысший максимум, а соседние — ниже.</li>
+                                <li><span class="text-rose-400">Swing Low:</span> Три свечи, где центральная имеет самый низкий минимум, а соседние — выше.</li>
+                            </ul>
+                        </div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p class="text-zinc-300 font-medium">Подтверждение (POI)</p>
+                            <ul class="list-disc list-inside space-y-1 mt-1 text-xs text-zinc-500">
+                                <li>Смена структуры на младшем таймфрейме, указывающая на валидность POI.</li>
+                                <li>Чтобы подтвердить, что зона интереса является ключевой точкой для входа.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-img bg-zinc-900/40 border border-zinc-700 rounded-2xl overflow-hidden">
+                    <img src="photo_2026-06-21_10-33-34.jpg" alt="Swing Low / Swing High" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== POI ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-12 pt-10 border-t border-zinc-800/50">
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Point of Interest (POI)</h3>
+                    <div class="space-y-4 text-sm text-zinc-400">
+                        <div><p class="text-zinc-300 font-medium">Что это?</p><p>POI — это участок, где можно ожидать важных изменений в цене. Это область, в которой рынок может показать определенные реакции.</p></div>
+                        <div><p class="text-zinc-300 font-medium">Почему это важно?</p><p>Здесь значительные рыночные игроки сосредотачивают свои активы и стремятся защищать этот регион.</p></div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p class="text-zinc-300 font-medium">Два основных вида POI:</p>
+                            <ul class="list-disc list-inside space-y-1 mt-1 text-xs text-zinc-500">
+                                <li>Зоны <span class="text-cyan-400">высокой ликвидности</span></li>
+                                <li>Районы с <span class="text-yellow-400">манипуляциями ценой</span> (большой объем заявок, блоки ордеров)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-img bg-zinc-900/40 border border-zinc-700 rounded-2xl overflow-hidden">
+                    <img src="photo_2026-06-21_10-33-30.jpg" alt="Order Block" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== ЛИНИИ ТРЕНДА ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-12 pt-10 border-t border-zinc-800/50">
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Линии тренда</h3>
+                    <div class="space-y-4 text-sm text-zinc-400">
+                        <div><p class="text-zinc-300 font-medium">Что это?</p><p>Диагональные линии на графиках, соединяющие ключевые точки данных для предвидения будущих движений цен.</p></div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p class="text-zinc-300 font-medium">Виды линий тренда</p>
+                            <ul class="list-disc list-inside space-y-2 mt-1 text-xs text-zinc-500">
+                                <li><span class="text-emerald-400 font-medium">Восходящие</span> — от нижней точки к более высокой. Каждое последующее основание свечи выше предыдущего.</li>
+                                <li><span class="text-rose-400 font-medium">Нисходящие</span> — от верхней точки к нижней. Каждый последующий максимум свечи ниже предыдущего.</li>
+                            </ul>
+                        </div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p>Линии тренда служат диагональными уровнями поддержки и сопротивления. <span class="text-yellow-400">Наклон</span> указывает на силу тренда: чем круче, тем сильнее.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-img bg-zinc-900/40 border border-zinc-700 rounded-2xl overflow-hidden">
+                    <img src="photo_2026-06-21_10-59-34.jpg" alt="Линии тренда" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== ФРАКТАЛЫ ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-12 pt-10 border-t border-zinc-800/50">
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Что такое фрактал?</h3>
+                    <div class="space-y-4 text-sm text-zinc-400">
+                        <div><p>Фрактал — ценовая формация, указывающая на <span class="text-white">локальный разворот</span> рынка. Состоит из <span class="text-cyan-400">5 свечей</span>.</p></div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p class="text-zinc-300 font-medium">⏬ Медвежий фрактал</p>
+                            <ul class="list-disc list-inside mt-1 text-xs text-zinc-500">
+                                <li>Средняя свеча — <span class="text-rose-400">максимум</span></li>
+                                <li>Две свечи до и две после — с более низкими хайами</li>
+                            </ul>
+                        </div>
+                        <div class="pt-2">
+                            <p class="text-zinc-300 font-medium">⏫ Бычий фрактал</p>
+                            <ul class="list-disc list-inside mt-1 text-xs text-zinc-500">
+                                <li>Средняя свеча — <span class="text-emerald-400">минимум</span></li>
+                                <li>Две свечи до и две после — с более высокими лоу</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="gallery-img bg-zinc-900/40 border border-zinc-700 rounded-2xl overflow-hidden">
+                        <img src="photo_2026-06-21_10-33-22.jpg" alt="Фракталы" class="w-full h-auto object-cover" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== КОМПРЕССИЯ ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-12 pt-10 border-t border-zinc-800/50">
+            <div class="grid md:grid-cols-2 gap-6 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">Компрессия (LRLR)</h3>
+                    <div class="space-y-4 text-sm text-zinc-400">
+                        <div><p class="text-zinc-300 font-medium">Что это?</p><p><span class="text-cyan-400">LRLR (Low Resistance Liquidity Run)</span> — метод эффективной доставки цены, оставляющий свежую ликвидность за хаями/лоями.</p></div>
+                        <div><p class="text-zinc-300 font-medium">Главная особенность</p><p>Выполняет <span class="text-yellow-400">mitigation зон спроса и предложения</span> и перекрывает ценовые дисбалансы (полностью или более чем на 50%).</p></div>
+                        <div class="pt-3 border-t border-zinc-800/50">
+                            <p class="text-zinc-300 font-medium">Идея компрессии</p>
+                            <p>Эффективно доставленная цена <span class="text-emerald-400">не требует mitigation</span> зон спроса и предложения. Зона компрессии создает <span class="text-rose-400">наименьшее сопротивление</span> для цены.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-img bg-zinc-900/40 border border-zinc-700 rounded-2xl overflow-hidden">
+                    <img src="photo_2026-06-21_10-33-27.jpg" alt="Компрессия" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+        </div>
+<!-- ============================================================ -->
+<!-- ===== СТРАТЕГИЯ ДЛЯ НОВИЧКОВ ===== -->
+<!-- ============================================================ -->
+<div class="mt-12 pt-10 border-t border-zinc-800/50">
+    <div class="grid md:grid-cols-2 gap-6 items-start">
+        <div>
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-3xl">🌚</span>
+                <h3 class="text-xl font-semibold">Стратегия для новичков</h3>
+            </div>
+            <div class="space-y-4 text-sm text-zinc-400">
+                <div><p class="text-zinc-300 font-medium">Как это работает?</p><p>Находите на графике <span class="text-cyan-400">нисходящую</span> или <span class="text-emerald-400">восходящую структуру</span>. 🔥</p></div>
+                <div><p class="text-zinc-300 font-medium">Следующий шаг</p><p>Проведите <span class="text-yellow-400 font-medium">трендовую линию</span>. 👀</p></div>
+                <div><p class="text-zinc-300 font-medium">Вход в сделку</p><p>При <span class="text-rose-400 font-medium">пробое трендовой линии</span> — открывайте позицию <span class="text-emerald-400 font-medium">в сторону пробоя</span>. 🚀</p></div>
+               
+            </div>
+        </div>
+        <div class="gallery-img bg-zinc-900/40 border border-zinc-700 rounded-2xl overflow-hidden">
+            <img src="photo_2026-06-21_10-33-57.jpg" alt="Таблица" class="w-full h-auto object-cover" />
+        </div>
+    </div>
+</div>
+
+        <!-- ============================================================ -->
+        <!-- ===== НОВЫЕ МАТЕРИАЛЫ ИЗ PDF ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-16 pt-10 border-t border-zinc-800/50">
+            <h2 class="text-2xl font-semibold mb-6">Дополнительные материалы</h2>
+            <p class="text-zinc-400 text-sm mb-8">Ключевые концепции из уроков</p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+
+                <!-- 1. Ликвидность -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag">ликвидность</span>
+                        <span class="tag-amber">основа</span>
+                    </div>
+                    <h4>Ликвидность</h4>
+                    <p>Способность актива быстро преобразовываться в деньги без влияния на цену. Умные деньги ищут ликвидность для исполнения крупных ордеров. Основной источник — стоп-лоссы розничных трейдеров.</p>
+                    <div class="mt-2 text-xs text-zinc-500">
+                        <span class="text-emerald-400">SSL</span> — ликвидность на продажу (под минимумами)<br />
+                        <span class="text-rose-400">BSL</span> — ликвидность на покупку (над максимумами)
+                    </div>
+                </div>
+
+                <!-- 2. Имбаланс -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag">имбаланс</span>
+                        <span class="tag-blue">FVG</span>
+                    </div>
+                    <h4>Имбаланс (Fair Value Gap)</h4>
+                    <p>Ценовой разрыв из-за дисбаланса спроса и предложения. Рынок стремится заполнить его. Бычий имбаланс (BISI) — для лонга, медвежий (SIBI) — для шорта.</p>
+                    <div class="mt-2 text-xs text-zinc-500">
+                        <span class="text-cyan-400">CE</span> — 50% имбаланса<br />
+                        <span class="text-yellow-400">FF</span> — 100% имбаланса
+                    </div>
+                </div>
+
+                <!-- 3. Ордер Блок -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag">ордер блок</span>
+                        <span class="tag-purple">OB</span>
+                    </div>
+                    <h4>Order Block</h4>
+                    <p>Свеча, показывающая покупки или продажи умного капитала. Зона поддержки или сопротивления. Цена стремится протестировать OB перед переоценкой актива.</p>
+                </div>
+
+                <!-- 4. Брейкер Блок -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-rose">брейкер</span>
+                        <span class="tag">BB</span>
+                    </div>
+                    <h4>Breaker Block</h4>
+                    <p>Ордер Блок, который был пробит и стал противоположной зоной. После пробоя становится зоной поддержки (для бычьего) или сопротивления (для медвежьего).</p>
+                </div>
+
+                <!-- 5. Митигейшн Блок -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-emerald">митигейшн</span>
+                        <span class="tag">MB</span>
+                    </div>
+                    <h4>Mitigation Block</h4>
+                    <p>Зона, где цена возвращается для теста перед продолжением движения. Используется как модель продолжения тренда или разворота.</p>
+                </div>
+
+                <!-- 6. Тень свечи -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-amber">тень</span>
+                        <span class="tag">wick</span>
+                    </div>
+                    <h4>Тень свечи (Wick)</h4>
+                    <p>Длинная тень указывает на активную торговлю умных денег. Визуально отображает Ордер Блок на старшем таймфрейме. Зона интереса для разворота.</p>
+                </div>
+
+                <!-- 7. Японские свечи -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag">свечи</span>
+                        <span class="tag-purple">паттерны</span>
+                    </div>
+                    <h4>Японские свечи</h4>
+                    <p>Метод отображения ценовых изменений. Бычья свеча — закрытие выше открытия. Медвежья — закрытие ниже открытия. Поглощение — сильный сигнал разворота.</p>
+                </div>
+
+                <!-- 8. Гэп -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-blue">гэп</span>
+                        <span class="tag">разрыв</span>
+                    </div>
+                    <h4>Гэп (Gap)</h4>
+                    <p>Ценовой разрыв между закрытием и открытием свечей. Указывает на неэффективную доставку цены. Выступает магнитом и зоной поддержки/сопротивления.</p>
+                </div>
+
+                <!-- 9. Профиль объема -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-emerald">объем</span>
+                        <span class="tag">VP</span>
+                    </div>
+                    <h4>Профиль объема (Volume Profile)</h4>
+                    <p>Индикатор, показывающий горизонтальные уровни торговой активности. <span class="text-cyan-400">POC</span> (Point of Control) — уровень с наибольшим объемом, где происходит набор позиций крупными игроками.</p>
+                </div>
+
+                <!-- 10. Ставка финансирования -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-rose">фондинг</span>
+                        <span class="tag">фьючерсы</span>
+                    </div>
+                    <h4>Ставка финансирования</h4>
+                    <p>Периодический платеж за удержание позиции на фьючерсном рынке. Положительная ставка — лонг платят шорту. Отрицательная — шорт платят лонгу.</p>
+                </div>
+
+                <!-- 11. Криптовалютные индексы -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-purple">индексы</span>
+                        <span class="tag">капитализация</span>
+                    </div>
+                    <h4>Криптовалютные индексы</h4>
+                    <p><span class="text-cyan-400">TOTAL</span> — кап всех криптовалют. <span class="text-yellow-400">TOTAL2</span> — без BTC. <span class="text-rose-400">BTC.D</span> — доминация Биткоина. Показывают переток капитала между активами.</p>
+                </div>
+
+                <!-- 12. Сезонные тенденции -->
+                <div class="material-block">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="tag-amber">сезонность</span>
+                        <span class="tag">циклы</span>
+                    </div>
+                    <h4>Сезонные тенденции</h4>
+                    <p>Модели, основанные на исторических данных. Показывают, как цены изменяются в определенное время года. Используются для прогнозирования ключевых пиков и разворотов.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- ===== КНОПКА НАЗАД ===== -->
+        <!-- ============================================================ -->
+        <div class="mt-12 pt-8 border-t border-zinc-800/50 text-center">
+            <a href="index.html" 
+               class="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium 
+                      bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400 
+                      rounded-2xl text-zinc-400 hover:text-white transition-all duration-300">
+                <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform"></i>
+                Вернуться на главную
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-black py-8 text-center text-zinc-500 border-t border-zinc-900 text-sm mt-8">
+        <p>© novikov crypto</p>
+    </footer>
+
+</body>
+</html>

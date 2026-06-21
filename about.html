@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кто я - Крипто Стратегии</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .neon-glow { box-shadow: 0 0 20px #22d3ee, 0 0 40px #a855f7; }
+        .tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.04em;
+            padding: 0.2rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(34, 211, 238, 0.08);
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+        }
+        .tag-white {
+            background: rgba(255, 255, 255, 0.04);
+            color: #9ca3af;
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-row span:first-child { color: #6b7280; }
+        .info-row span:last-child { color: #e5e7eb; }
+		
+		
+		
+		.crypto-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;           /* відстань між іконками */
+    padding: 20px 0;
+    background: transparent;   /* повністю прозорий фон */
+}
+
+.crypto-icons img {
+    width: 55px;             /* розмір іконок — можеш змінити */
+    height: 55px;
+    transition: transform 0.3s ease;
+}
+
+.crypto-icons img:hover {
+    transform: scale(1.15);   /* легке збільшення при наведенні */
+}
+</style>
+</style>
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+
+    <!-- ===== HEADER ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center text-xl font-bold">₿</div>
+                <span class="text-2xl font-semibold tracking-tight">novikov crypto </span>
+            </a>
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <a href="about.html" class="text-cyan-400">Обо мне</a>
+                <a href="contact.html" class="hover:text-cyan-400 transition">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main class="pt-24 max-w-4xl mx-auto px-6 py-16">
+
+<h1 class="text-5xl md:text-6xl font-bold mb-4">Кто я</h1>
+        <p class="text-xl text-zinc-400 mt-6 mb-12">~/novikov — трейдинг, программирование, финансовая независимость</p>
+
+        <!-- ===== БИО ===== -->
+        <div class="space-y-6">
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">about me</div>
+                <p class="text-zinc-300 text-lg leading-relaxed">
+                    Занимаюсь трейдингом и программированием. Анализирую финансовые рынки, создаю торговые стратегии. Разрабатываю веб-проекты и автоматизирую процессы.
+                </p>
+                <p class="text-zinc-400 mt-3">
+                    Живу в Восточной Европе. Цель — <span class="text-cyan-400">финансовая независимость</span>.
+                </p>
+            </div>
+
+            <hr class="border-zinc-800">
+
+            <!-- ===== ТРЕЙДИНГ ===== -->
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">trading</div>
+                <p class="text-zinc-400">Анализирую графики, паттерны, психологию торговли. Работаю с фьючерсами и крипторынком.</p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="tag">фьючерсы</span>
+                    <span class="tag">крипторынок</span>
+                    <span class="tag">паттерны</span>
+                    <span class="tag">психология</span>
+                </div>
+            </div>
+
+            <hr class="border-zinc-800">
+
+            <!-- ===== РОЗРОБКА ===== -->
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">development</div>
+                <p class="text-zinc-400">Разрабатываю веб-приложения, ботов, автоматизированные системы. Строю карьеру и инвестирую в будущее.</p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="tag">веб-приложения</span>
+                    <span class="tag">боты</span>
+                    <span class="tag">автоматизация</span>
+                </div>
+            </div>
+
+            <hr class="border-zinc-800">
+
+            <!-- ===== СТЕК ТЕХНОЛОГІЙ ===== -->
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">stack</div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">JavaScript ES6+</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Web3</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+
+            <hr class="border-zinc-800">
+
+            <!-- ===== ПРОЄКТИ ===== -->
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">projects</div>
+                <ul class="space-y-2 text-zinc-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-cyan-400 mt-1">◆</span>
+                        <span>Веб-платформа для аналитики крипторынка <span class="text-zinc-500 text-sm">(в разработке)</span></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-cyan-400 mt-1">◆</span>
+                        <span>Торговый бот для фьючерсов — Python + CCXT</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-cyan-400 mt-1">◆</span>
+                        <span>Telegram-бот для сигналов и управления портфелем</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-cyan-400 mt-1">◆</span>
+                        <span>Адаптивные веб-сайты</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-emerald-400">
+                        <span class="text-emerald-400 mt-1">◆</span>
+                        <span>Продам готового бота под dump/pump strategy</span>
+                    </li>
+                </ul>
+            </div>
+
+            <hr class="border-zinc-800">
+
+            <!-- ===== В ПЛАНАХ ===== -->
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">в планах</div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag tag-white">Solidity</span>
+                    <span class="tag tag-white">AI-модели для трейдинга</span>
+                </div>
+            </div>
+
+            <hr class="border-zinc-800">
+
+            <!-- ===== ПРИЙМАЮ В РОБОТУ ===== -->
+            <div>
+                <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">принимаю в работу</div>
+                <div class="space-y-3">
+                    <div class="bg-zinc-900/60 border border-zinc-700 rounded-xl p-4">
+                        <div class="font-semibold text-emerald-400"><i class="fas fa-building-columns mr-2"></i>Аккаунты криптобирж</div>
+                        <p class="text-zinc-400 text-sm mt-1">Скупаю аккаунты MEXC с отрицательным PNL. Условия обсуждаемы.</p>
+                    </div>
+                    <div class="bg-zinc-900/60 border border-zinc-700 rounded-xl p-4">
+                        <div class="font-semibold text-purple-400"><i class="fas fa-handshake mr-2"></i>Партнёрские программы / арбитраж трафика</div>
+                        <p class="text-zinc-400 text-sm mt-1">Сотрудничество в сфере crypto. Рассмотрю офферы.</p>
+                    </div>
+                    <div class="bg-zinc-900/60 border border-zinc-700 rounded-xl p-4">
+                        <div class="font-semibold text-cyan-400"><i class="fas fa-robot mr-2"></i>Разработка ботов на заказ</div>
+                        <p class="text-zinc-400 text-sm mt-1">Торговые боты, Telegram-боты, автоматизация. Под ваши требования.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-zinc-800">
+
+     <!-- ===== WEB3 CRYPTO BLOCK ===== -->
+	      <div class="text-cyan-400 text-sm uppercase tracking-wider mb-2">оплата криптой </div>
+<div class="crypto-icons">
+    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" />
+    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" />
+    <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" alt="USDT" />
+    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" />
+</div>
+
+
+
+</div>
+<BR>
+            <hr class="border-zinc-800">
+
+    
+
+            <hr class="border-zinc-800">
+
+       
+
+        </div>
+        <!-- /space-y-6 -->
+
+        <!-- ===== КНОПКА ВНИЗУ ===== -->
+        <div class="mt-12 pt-8 border-t border-zinc-800 text-center">
+            <a href="contact.html" class="text-lg inline-flex items-center gap-3 px-8 py-5 border border-cyan-400 hover:bg-cyan-400 hover:text-zinc-950 transition-colors rounded-2xl group">
+                <i class="fab fa-telegram text-cyan-400 group-hover:text-zinc-950 transition"></i>
+                Хочешь сотрудничать? Напиши мне →
+            </a>
+        </div>
+  
+<!-- ===== КНОПКА НАЗАД ===== -->
+<div class="mt-16 pt-10 border-t border-zinc-800/50 text-center">
+    <a href="index.html" 
+       class="group inline-flex items-center gap-3 px-8 py-4 text-lg font-medium 
+              bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 hover:border-cyan-400 
+              rounded-2xl text-zinc-400 hover:text-white transition-all duration-300 
+              neon-glow-hover">
+        <i class="fas fa-arrow-left text-cyan-400 group-hover:-translate-x-1 transition-transform"></i>
+        Вернуться на главную
+    </a>
+</div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-black py-8 text-center text-zinc-500 border-t border-zinc-900 text-sm">
+        <p>© 2026 Крипто Стратегии — novikov</p>
+    </footer>
+
+</body>
+</html>
